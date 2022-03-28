@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mongo:
+    container_name: "mongo-local"
+    image: mongo:3.6-jessie
+    stdin_open: true
+    volumes:
+      - /data/db
+    tty: true
+    ports:
+      - 27017:27017/tcp
+    labels:
+      io.rancher.container.pull_image: always
